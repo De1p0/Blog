@@ -6,7 +6,6 @@
 
 <div class="my-10 flex gap-5"> 
     <a 
-        href="/rss.xml"
         title="rss feed"
         class="fa-solid fa-rss fa-xl no-underline text-primary-text-darker hover:text-primary-text-dark"></a>
     <a

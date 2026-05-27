@@ -2,6 +2,7 @@
 	import { marked } from 'marked';
 	import homeMD from '$lib/posts/home.md?raw';
 	import type { Post } from '../types/Post';
+	import { resolve } from '$app/paths';
 
 	let posts: Post[] = $state<Post[]>([]);
 
@@ -38,12 +39,14 @@
 	<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 	{@html marked(homeMD)}
 
-	<p class="text-primary-text-darker">RECENT POSTS</p>
+	<div class="text-primary-text-darker">RECENT POSTS</div>
 
 	{#each posts as post, index (index)}
 		<div class="border-b border-dashed border-b-soft/20 py-2">
-			<div>{post.meta.title}</div>
-			<div class="text-primary-text-darker">{post.meta.description}</div>
+			<a href={resolve(`/blog/${post.meta.slug}`)} class="no-underline">
+				<div class="text-primary-text">{post.meta.title}</div>
+				<div class="text-primary-text-darker">{post.meta.description}</div>
+			</a>
 		</div>
 	{/each}
 </div>

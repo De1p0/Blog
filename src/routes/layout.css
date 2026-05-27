@@ -9,12 +9,7 @@ html {
 	overflow-x: hidden;
 }
 
-@theme {
-	--font-mozilla: 'Mozilla Text', sans-serif;
-	--font-monda: 'Monda', sans-serif;
-
-	--color-soft: #b5b5bd;
-
+:root {
 	--color-primary-text: #ffffff;
 	--color-primary-text-dark: #c9c9c9;
 	--color-primary-text-darker: #a8a8a8;
@@ -22,6 +17,26 @@ html {
 	--color-background: #0b0f14;
 }
 
+[data-theme='light'] {
+	--color-primary-text: #111111;
+	--color-primary-text-dark: #333333;
+	--color-primary-text-darker: #555555;
+
+	--color-background: #f5f7fa;
+}
+
+@theme {
+	--font-mozilla: 'Mozilla Text', sans-serif;
+	--font-monda: 'Monda', sans-serif;
+
+	--color-soft: #b5b5bd;
+
+	--color-primary-text: var(--color-primary-text);
+	--color-primary-text-dark: var(--color-primary-text-dark);
+	--color-primary-text-darker: var(--color-primary-text-darker);
+
+	--color-background: var(--color-background);
+}
 @layer components {
 	.markdown h1 {
 		font-size: 2.25rem;

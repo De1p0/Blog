@@ -8,6 +8,18 @@
 		{ name: 'work', path: '/work' },
 		{ name: 'projects', path: '/projects' }
 	] as const;
+
+	let lightMode = false;
+
+	function toggleTheme() {
+		lightMode = !lightMode;
+
+		if (lightMode) {
+			document.documentElement.setAttribute('data-theme', 'light');
+		} else {
+			document.documentElement.removeAttribute('data-theme');
+		}
+	}
 </script>
 
 <div class="z-500 mb-10 flex h-15 w-full items-center justify-between text-primary-text-darker">
@@ -19,7 +31,7 @@
 		{#each PATHS as link (link.path)}
 			<li
 				class:text-primary-text={page.url.pathname === link.path}
-				class="font-monda transition-colors hover:text-soft"
+				class="font-monda transition-colors"
 			>
 				<a href={resolve(link.path)}>
 					{link.name}
@@ -28,5 +40,7 @@
 		{/each}
 	</ul>
 
-	dark
+	<button on:click={toggleTheme} class="transition-color cursor-pointer font-monda">
+		{lightMode ? 'light' : 'dark'}
+	</button>
 </div>
