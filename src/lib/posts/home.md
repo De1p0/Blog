@@ -1,4 +1,4 @@
-### hi i'm delphi
+<h3 > hi i'm <span class="text-accent"> delphi </span> </h5>
 
 <div class="text-primary-text-darker">software engineer / reverse engineer</div>
 

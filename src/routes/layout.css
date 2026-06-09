@@ -11,10 +11,11 @@ html {
 
 :root {
 	--color-primary-text: #ffffff;
+	--color-accent: #c27070;
 	--color-primary-text-dark: #c9c9c9;
 	--color-primary-text-darker: #a8a8a8;
 
-	--color-background: #0b0f14;
+	--color-background: #1c1c1c;
 }
 
 [data-theme='light'] {
@@ -32,6 +33,7 @@ html {
 	--color-soft: #b5b5bd;
 
 	--color-primary-text: var(--color-primary-text);
+	--color-accent: var(--color-accent);
 	--color-primary-text-dark: var(--color-primary-text-dark);
 	--color-primary-text-darker: var(--color-primary-text-darker);
 
